@@ -16,16 +16,16 @@ def main():
         year = int(year_as_string)
 
         # process and output
-        if year % 4 != 0:
-            print("{0} is not leap year.".format(year_as_string))
-        else:
-            if year % 100 != 0:
-                print("{0} is a leap year.".format(year_as_string))
-            else:
-                if year % 400 != 0:
-                    print("{0} is not leap year.".format(year_as_string))
-                else:
+        if year % 4 == 0:
+            if year % 100 == 0:
+                if year % 400 == 0:
                     print("{0} is a leap year.".format(year_as_string))
+                else:
+                    print("{0} is not a leap year.".format(year_as_string))
+            else:
+                print("{0} is a leap year.".format(year_as_string))
+        else:
+            print("{0} is not a leap year.".format(year_as_string))
 
     except Exception:
         print("{0} is not an integer.".format(year_as_string))
